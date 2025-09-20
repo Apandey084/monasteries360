@@ -116,7 +116,7 @@ export default function Home() {
   return (
     <>
       <div className="relative z-[-2] min-h-screen w-full bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]">
-        
+
         {/* Banner */}
         <div className="banner bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvyi-BAHLi81eoRnunKtIr2blmIbBS7R1pDw&s')] h-[400px] sm:h-[500px] w-[90%] sm:w-[80%] container mx-auto bg-no-repeat bg-cover border border-amber-50 flex flex-col gap-4 py-10 sm:py-[40px] rounded-[10px]">
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-black text-center pt-[60px] sm:pt-[100px] px-4">
@@ -144,11 +144,15 @@ export default function Home() {
         </h1>
         <div className="featuredmonasteries grid place-items-center gap-6 py-6 w-[90%] sm:w-[80%] container mx-auto">
           <div className="monasteriescard h-auto max-w-[270px] text-white border border-slate-400 text-center rounded-[10px] flex flex-col gap-2 hover:bg-sky-700">
-            <img
-              className="h-[150px] w-full rounded-t-[10px] object-cover"
-              src="https://media.istockphoto.com/id/687689872/photo/buddha-park-rabangla-sikkim.webp?a=1&b=1&s=612x612&w=0&k=20&c=WTGGsTlp0z97R6UoL-JMtZGrpHZFI_l4DHAQA0m8ek0="
-              alt="monastery"
-            />
+            <div className="relative h-[150px] w-full">
+              <Image
+                className="rounded-t-[10px] object-cover"
+                src="https://media.istockphoto.com/id/687689872/photo/buddha-park-rabangla-sikkim.webp?a=1&b=1&s=612x612&w=0&k=20&c=WTGGsTlp0z97R6UoL-JMtZGrpHZFI_l4DHAQA0m8ek0="
+                alt="monastery"
+                fill
+                style={{ objectFit: "cover", borderTopLeftRadius: "10px", borderTopRightRadius: "10px" }}
+              />
+            </div>
             <h3 className="text-[15px] font-bold">dffgndffgfdjknndsvkdv</h3>
             <p className="text-[10px] sm:text-[12px] px-3">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem blanditiis culpa officia eaque possimus.
@@ -182,14 +186,15 @@ export default function Home() {
               key={idx}
               className="explorecard text-center h-[250px] w-[200px] sm:w-[220px] lg:w-[250px] bg-black text-white border flex flex-col gap-2 justify-center items-center rounded-[10px] p-4"
             >
-              <img
-                className="h-[60px] sm:h-[80px] w-[60px] sm:w-[80px] rounded-full object-cover"
-                src={item.img}
-                alt={item.title}
-              />
-              <h3 className="text-[14px] sm:text-[15px] font-bold">
-                {item.title}
-              </h3>
+              <div className="relative h-[80px] w-[80px] sm:h-[80px] sm:w-[80px]">
+                <Image
+                  src={item.img}
+                  alt={item.title}
+                  fill
+                  className="rounded-full object-cover"
+                />
+              </div>
+              <h3 className="text-[14px] sm:text-[15px] font-bold">{item.title}</h3>
               <p className="text-[10px] sm:text-[12px]">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
               </p>
