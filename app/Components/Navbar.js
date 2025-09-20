@@ -28,26 +28,27 @@
 // export default Navbar
 
 
-"use client"
+"use client";
 
-import React, { useState } from 'react'
-import Link from 'next/link'
-import { FiMenu, FiX } from 'react-icons/fi'
+import React, { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { FiMenu, FiX } from "react-icons/fi";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false)
-
-  const toggleMenu = () => setIsOpen(!isOpen)
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
     <nav className="bg-slate-900 fixed w-full top-0 text-white shadow-md z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
-        <div className="logo text-xl font-bold flex gap-[10px] "><img className="h-[50px] w-[50px] rounded-[50%]" src="/mainlogo.png" alt="" />
-        
-      <span className='font-bold text-white text-2xl '>
-        
-        Monasteries360
-        </span>  </div>
+        {/* Logo */}
+        <div className="logo text-xl font-bold flex gap-[10px] items-center">
+          <div className="relative h-[50px] w-[50px] rounded-full overflow-hidden">
+            <Image src="/mainlogo.png" alt="Logo" fill className="object-cover" />
+          </div>
+          <span className="font-bold text-white text-2xl">Monasteries360</span>
+        </div>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex list-none gap-8 items-center">
@@ -89,7 +90,7 @@ const Navbar = () => {
         </div>
       )}
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

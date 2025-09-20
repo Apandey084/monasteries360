@@ -1,8 +1,18 @@
+// /** @type {import('next').NextConfig} */
+// const nextConfig = {
+//    images: {
+//     domains: ["encrypted-tbn0.gstatic.com", "media.istockphoto.com"],
+//   },
+// };
+
+// export default nextConfig;
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-     images: {
-    domains: ['media.istockphoto.com'],
+  images: {
+    domains: ["encrypted-tbn0.gstatic.com", "media.istockphoto.com", "assets.zeezest.com"],
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
+

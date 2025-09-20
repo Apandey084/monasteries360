@@ -18,9 +18,10 @@
 
 // export default virtualtour
 
-"use client"
+"use client";
 
 import React from "react";
+import Image from "next/image";
 
 const VirtualTour = () => {
   const monasteries = [
@@ -32,15 +33,13 @@ const VirtualTour = () => {
     { name: "Monastery F", location: "Mongolia" },
   ];
 
-  // Your base64 image
+  // External image URL
   const base64Image =
-    "https://assets.zeezest.com/images/PROD_4_1667192700528_thumb_500.jpeg"; // shorten for readability, paste your full base64 string here
+    "https://assets.zeezest.com/images/PROD_4_1667192700528_thumb_500.jpeg";
 
   return (
     <div className="relative min-h-screen w-full bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px] p-8">
-
-            {/* Header */}
-      <h1 className="text-3xl font-bold text-center mb-8">Admin Panel</h1>
+      {/* Header */}
       <h1 className="text-white text-3xl font-bold text-center mb-10">
         Virtual Tour
       </h1>
@@ -53,11 +52,12 @@ const VirtualTour = () => {
             className="bg-white/10 border border-white/20 rounded-2xl shadow-lg overflow-hidden hover:scale-105 hover:shadow-xl transition-transform duration-300 cursor-pointer"
           >
             {/* Image */}
-            <div className="relative">
-              <img
+            <div className="relative h-48 w-full">
+              <Image
                 src={base64Image}
                 alt={monastery.name}
-                className="w-full h-48 object-cover"
+                fill
+                className="object-cover"
               />
               <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition">
                 <span className="text-white font-semibold text-lg">

@@ -28,7 +28,7 @@
 "use client";
 import React, { useState } from "react";
 
-const adminpanel = () => {
+const AdminPanel = () => {
   const sections = [
     { title: "Featured Monuments" },
     { title: "Virtual Tours" },
@@ -36,18 +36,18 @@ const adminpanel = () => {
     { title: "Upcoming Events" },
   ];
 
-  const [openModal, setOpenModal] = useState(null);
+  const [openModal, setOpenModal] = useState<string | null>(null);
 
   return (
-    <>
-     <div className="relative top-0 z-[-2] h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]">
-
-      <div className="min-h-screen w-full text-white px-4 py-8">
-
-
-       <h1 className="text-white text-3xl font-bold text-center"> Explore our Feature </h1>
-      {/* Header */}
-      <h1 className="text-3xl font-bold text-center mb-8">Admin Panel</h1>
+    <div className="relative z-[-2] min-h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px] text-white px-4 py-8">
+      
+      {/* Page Headers */}
+      <h1 className="text-3xl sm:text-4xl font-bold text-center mb-2">
+        Admin Panel
+      </h1>
+      <h2 className="text-xl sm:text-2xl text-center mb-8 text-gray-300">
+        Explore our Feature
+      </h2>
 
       {/* Section Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -57,7 +57,7 @@ const adminpanel = () => {
             onClick={() => setOpenModal(section.title)}
             className="bg-[#111827] border border-gray-700 rounded-xl shadow-lg p-6 hover:scale-105 transition-all duration-300 cursor-pointer"
           >
-            <h2 className="text-lg font-semibold">{section.title}</h2>
+            <h3 className="text-lg font-semibold">{section.title}</h3>
             <p className="text-sm text-gray-400 mt-2">
               Manage and update {section.title.toLowerCase()}.
             </p>
@@ -69,6 +69,7 @@ const adminpanel = () => {
       {openModal && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/70 z-50">
           <div className="bg-[#111827] border border-gray-700 rounded-xl shadow-lg p-6 w-full max-w-lg">
+            
             {/* Modal Header */}
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-xl font-bold">{openModal}</h2>
@@ -113,9 +114,7 @@ const adminpanel = () => {
         </div>
       )}
     </div>
-    </div>
-    </>
   );
 };
 
-export default adminpanel;
+export default AdminPanel;
