@@ -10,12 +10,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: [
-      "encrypted-tbn0.gstatic.com",
-      "media.istockphoto.com",
-      "assets.zeezest.com",
+    remotePatterns: [
+      { protocol: 'https', hostname: '**', pathname: '/**' },
     ],
   },
 };
 
 export default nextConfig;
+
+
