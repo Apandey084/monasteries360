@@ -34,11 +34,14 @@ const Booking = () => {
 
      
    
-    <div className="relative top-0 z-[-2] min-h-screen w-full bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px] flex items-center justify-center p-6">
+  <div className="relative z-[-2] min-h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px] text-white px-4 py-8">
       
-
+   {/* Page Headers */}
+      <h1 className="text-3xl sm:text-4xl font-bold text-center pt-[50px]   ">
+        Bookings
+      </h1>
                
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl w-full mt-[20px]  container mx-auto ">
         {cards.map((card, idx) => (
           <div
             key={idx}

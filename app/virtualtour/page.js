@@ -38,14 +38,16 @@ const VirtualTour = () => {
     "https://assets.zeezest.com/images/PROD_4_1667192700528_thumb_500.jpeg";
 
   return (
-    <div className="relative min-h-screen w-full bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px] p-8">
-      {/* Header */}
-      <h1 className="text-white text-3xl font-bold text-center mb-10">
+    
+  <div className="relative z-[-2] min-h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px] text-white px-4 py-8">
+      
+   {/* Page Headers */}
+      <h1 className="text-3xl sm:text-4xl font-bold text-center pt-[50px]   ">
         Virtual Tour
       </h1>
 
       {/* Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 max-w-7xl mx-auto mt-[20px]">
         {monasteries.map((monastery, idx) => (
           <div
             key={idx}
