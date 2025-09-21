@@ -24,7 +24,6 @@
 
 // export default admin
 
-
 "use client";
 import React, { useState } from "react";
 
@@ -36,7 +35,7 @@ const AdminPanel = () => {
     { title: "Upcoming Events" },
   ];
 
-  const [openModal, setOpenModal] = useState<string | null>(null);
+  const [openModal, setOpenModal] = useState(null); // ✅ fixed
 
   return (
     <div className="relative z-[-2] min-h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px] text-white px-4 py-8">
